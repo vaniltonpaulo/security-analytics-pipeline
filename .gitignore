@@ -1,0 +1,31 @@
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Logs
+logs/
+*.log
+
+# dbt generated files
+target/
+dbt_packages/
+logs/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
