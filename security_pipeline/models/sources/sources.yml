@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: Raw security event data loaded by the Python script
+    tables:
+      - name: auth_events
+        description: Raw authentication event logs with intentional quality issues
