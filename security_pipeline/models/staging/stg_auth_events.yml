@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_auth_events
+    description: Cleaned and standardized authentication events with deduplication
+    columns:
+      - name: event_id
+        description: Unique identifier from the source table
+        tests:
+          - not_null
+      - name: event_timestamp
+        description: Parsed and standardized event timestamp
+        tests:
+          - not_null
+      - name: event_type
+        description: Uppercased event type
+        tests:
+          - not_null
+          - accepted_values:
+              values:
+                - LOGIN
+                - LOGOUT
+                - FAILED_LOGIN
+                - PASSWORD_CHANGE
+                - MFA_CHALLENGE

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fct_login_attempts
+    description: Daily login attempt statistics per user with failure rates
+    columns:
+      - name: login_stat_id
+        description: Surrogate key derived from user_id and event_date
+        tests:
+          - unique
+          - not_null
+      - name: failure_rate_pct
+        description: Percentage of failed login attempts for the user on that day
+
+  - name: fct_brute_force_detection
+    description: Detected brute-force login attempts using 10-minute sliding window analysis
+    columns:
+      - name: event_id
+        description: Event identifier from the staging layer
+        tests:
+          - not_null

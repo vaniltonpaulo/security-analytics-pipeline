@@ -1,0 +1,1 @@
+SELECT * FROM analytics.fct_brute_force_detection LIMIT 10;
